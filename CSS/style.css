@@ -1,0 +1,36 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-image: url('./images/pexels-pixabay-53594.jpg'); 
+    background-size: cover; 
+    background-position: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+form {
+    text-align: center;
+}
+
+.hide {
+    display: none;
+}
+
+#current-weather {
+    text-align: center;
+}
+
+#forecast {
+    text-align: center;
+}
+
+#search-history {
+    text-align: center;
+}
+

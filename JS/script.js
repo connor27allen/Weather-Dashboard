@@ -1,5 +1,7 @@
 var searchInput = $('#search-input');
 var searchBtn = $('#search-btn');
+var currentEl = $('#current-weather')
+var forecastEl = $('#forecast')
 var apiKey = 'e9dd823f996631a8acc598c7c9e0c07d';
 var currentUrl = 'https://api.openweathermap.org/data/2.5/weather?appid=e9dd823f996631a8acc598c7c9e0c07d&units=imperial&';
 var forecastUrl = 'https://api.openweathermap.org/data/2.5/forecast?appid=e9dd823f996631a8acc598c7c9e0c07d&units=imperial&';
@@ -26,9 +28,11 @@ function displayCurrentWeather(data) {
   $('#city-name').text(cityName);
   $('#date').text(date);
   $('#weather-icon').attr('src', `http://openweathermap.org/img/w/${icon}.png`);
-  $('#temperature').text(temperature);
-  $('#humidity').text(humidity);
-  $('#wind-speed').text(windSpeed);
+  $('#temperature').text('Temperature(F): ' + temperature);
+  $('#humidity').text('Humidity: ' + humidity);
+  $('#wind-speed').text('Wind(mph)' + windSpeed);
+
+  currentEl.removeClass('hide');
 }
 
 function displayForecast(data) {
@@ -58,12 +62,13 @@ function displayForecast(data) {
       `);
       
     }
-
+    
     // forecastContainer.append(date, icon, temperature, humidity, windSpeed);
 
     // Append forecast container to the page
     // $('#forecast-container').append(forecastContainer);
   }
+  forecastEl.removeClass('hide');
 }
 
 function getCurrentForecast(cityName) {
